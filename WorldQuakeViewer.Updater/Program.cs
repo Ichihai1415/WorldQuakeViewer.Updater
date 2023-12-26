@@ -19,6 +19,9 @@ namespace WorldQuakeViewer.Updater
                 ConWrite($"//WorldQuakeViewer.Updater v{version}//");
                 ConWrite("///////////////////////////////////");
 
+                if(!File.Exists("WorldQuakeViewer.exe"))
+                    throw new Exception("WorldQuakeViewer.exeと同じフォルダに入れてください。(自分で起動する必要はありません。)");
+
                 if (File.Exists("tmp.zip"))//通常はここ
                 {
                     ConWrite("ファイルを展開しています...", ConsoleColor.Cyan);
